@@ -119,8 +119,9 @@
                         required
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#349BDB]"
                     />
+                   
                     </form>
-
+                    <p id="errMsg"></p>
                     <!-- Submit Button -->
                     <a
                     onclick="validateCode()"
@@ -137,6 +138,7 @@
                         >Resend</a
                     >
                     </p>
+                    
 
                     <!-- Back to Log In Link -->
                     <!-- <a
@@ -172,7 +174,10 @@
       console.log("validatecode")
       let num = document.getElementById("number").value
       if (num.length < 4 ){
-
+        document.getElementById("errMsg").innerHTML = " the value is less than 4 "
+      }else{
+        document.getElementById("errMsg").innerHTML = "loading * * *  "
+        window.location.href = '../forgetpass3/forgetpass3.html'; //relative to domain
       }
 
     }

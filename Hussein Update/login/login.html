@@ -24,6 +24,10 @@
 
             <label for="email">Email Address</label>
             <input class="inp" type="email" id="email" name="email" required />
+            <p id="errMsg">
+
+            </p>
+        
 
             <label for="password">Password</label>
             <input
@@ -34,7 +38,9 @@
               required
             />
 
-            <button type="submit">Log in</button>
+            <button type="submit"
+            onclick="submitForm()"
+            >Log in</button>
 
             <a
               href="../forgetpass1/forgetpass1.html"
@@ -48,4 +54,12 @@
     </div>
     <script src="script.js"></script>
   </body>
+  <script>
+function submitForm() {
+    const emailStr = document.getElementById("email").value
+    const password = document.getElementById("password").value
+    window.location.href="../hommme/home.html"
+
+    }
+</script>
 </html>

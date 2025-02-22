@@ -10,6 +10,9 @@
               @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
     </style>
+    <style>
+      .error { color: red; }
+  </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       function toggleMenu() {
@@ -96,9 +99,9 @@
               <label for="email">Email Address</label>
               <input class="focus:outline-none focus:ring-2 focus:ring-[#349BDB]" type="email" id="email" name="email" required />
             </form>
-
+            <div id="errMsg" class="error"></div>
             <a
-              href="../forgetpass2/forgetpass2.html"
+              onclick="validEmail()"
               class="btn anim bg-[#11477B]"
               target="_blank"
               >Submit</a
@@ -112,4 +115,22 @@
       </div>
     </div>
   </body>
+  <script>
+  function validEmail(){
+            const email = document.getElementById("email").value;
+            const errMsg = document.getElementById("errMsg");
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+            if (!emailPattern.test(email)) {
+                errMsg.innerHTML = "Invalid email address";
+                return false;
+            }
+            errMsg.innerHTML = "";
+            window.location.href = "../forgetpass2/forgetpass2.html"
+        
+
+            return true;
+        }
+
+  </script>
 </html>
